@@ -1,0 +1,67 @@
+.navigation_Home {
+  color: white;
+  background-color: rgb(37, 37, 37);
+  position: sticky;
+  display: flex;
+  overflow-x: auto;
+  top: 0;
+  border-bottom: 2px solid rgb(128, 128, 128, 0.27);
+  padding: 0.5rem 0;
+  z-index: 10;
+}
+
+.light .navigation_Home {
+  background-color: #f0f0f0;
+  color: #333;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn_nav_home {
+  background-color: rgb(46, 46, 46);
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 45px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.light .btn_nav_home {
+  background-color: #e0e0e0;
+  color: #333;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn_nav_home:hover {
+  background-color: rgb(128, 128, 128);
+}
+
+.light .btn_nav_home:hover {
+  background-color: #d0d0d0;
+  transform: translateY(-1px);
+}
+
+.light .btn_nav_home.active {
+  background-color: #2a7bbb;
+  color: white;
+}
+
+/* Add scrollbar styling for the navigation */
+.navigation_Home::-webkit-scrollbar {
+  height: 4px;
+}
+
+.navigation_Home::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 4px;
+}
+
+.light .navigation_Home::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Home page content styling */
+.light .container2_Pages_App {
+  background-color: #f5f5f5;
+}

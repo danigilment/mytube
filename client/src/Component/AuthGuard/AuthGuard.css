@@ -1,0 +1,25 @@
+.auth-guard-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.auth-guard-message h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.auth-guard-message p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  max-width: 600px;
+}
+
+.light .auth-guard-message {
+  color: #333;
+}

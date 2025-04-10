@@ -1,0 +1,313 @@
+.otp-verification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.otp-verification {
+  background-color: rgb(33, 33, 33);
+  padding: 25px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.otp-verification h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #444;
+  padding-bottom: 15px;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.step-container {
+  margin: 20px 0;
+}
+
+.verification-toggle {
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #444;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 10px;
+  background-color: #333;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-btn.active {
+  background-color: #3ea6ff;
+  color: #000;
+  font-weight: bold;
+}
+
+.otp-verification label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0 20px;
+}
+
+.otp-digit-input {
+  width: 40px !important;
+  height: 50px;
+  padding: 0 !important;
+  text-align: center;
+  font-size: 24px !important;
+  font-weight: bold;
+  margin-top: 0 !important;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: white;
+}
+
+.otp-digit-input:focus {
+  border-color: #3ea6ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(62, 166, 255, 0.3);
+}
+
+.otp-button {
+  background-color: #3ea6ff;
+  color: black;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.otp-button:hover {
+  background-color: #2a90e6;
+}
+
+.otp-button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  color: #aaa;
+}
+
+.message {
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+.message.success {
+  background-color: rgba(39, 174, 96, 0.2);
+  color: #2ecc71;
+}
+
+.message.error {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+}
+
+.message.info {
+  background-color: rgba(52, 152, 219, 0.2);
+  color: #3498db;
+}
+
+.otp-footer {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #888;
+  text-align: center;
+  border-top: 1px solid #444;
+  padding-top: 15px;
+}
+
+.resend-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.resend-timer {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.resend-button {
+  background: none;
+  border: none;
+  color: #3ea6ff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  padding: 5px;
+}
+
+.resend-button.active:hover {
+  color: #2a90e6;
+}
+
+.resend-button.disabled {
+  color: #666;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.contact-info {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.switch-method-btn {
+  background: none;
+  border: none;
+  color: #3ea6ff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+.switch-method-btn:hover {
+  color: #2a90e6;
+}
+
+/* Light theme support */
+.light .otp-verification {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.light .otp-verification h2 {
+  color: #333;
+  border-bottom-color: #ddd;
+}
+
+.light .verification-toggle {
+  border-color: #ccc;
+}
+
+.light .toggle-btn {
+  background-color: #e0e0e0;
+  color: #666;
+}
+
+.light .toggle-btn.active {
+  background-color: #2a7bbb;
+  color: white;
+}
+
+.light .contact-input {
+  background-color: white;
+  border-color: #ccc;
+  color: #333;
+}
+
+.light .otp-digit-input {
+  background-color: white;
+  border-color: #ccc;
+  color: #333;
+}
+
+.light .otp-digit-input:focus {
+  border-color: #2a7bbb;
+  box-shadow: 0 0 0 2px rgba(42, 123, 187, 0.3);
+}
+
+.light .message {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.light .message.success {
+  background-color: rgba(39, 174, 96, 0.1);
+  color: #27ae60;
+}
+
+.light .message.error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #c0392b;
+}
+
+.light .message.info {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: #2980b9;
+}
+
+.light .otp-footer {
+  color: #666;
+  border-top-color: #ddd;
+}
+
+.light .resend-timer {
+  color: #666;
+}
+
+.light .resend-button {
+  color: #2a7bbb;
+}
+
+.light .resend-button.disabled {
+  color: #999;
+}
+
+.light .contact-info {
+  color: #666;
+}
+
+.light .switch-method-btn {
+  color: #2a7bbb;
+}
+
+.light .switch-method-btn:hover {
+  color: #1a5a9a;
+}

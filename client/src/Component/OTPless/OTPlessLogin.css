@@ -1,0 +1,114 @@
+.otpless-login-container {
+  background-color: rgb(33, 33, 33);
+  padding: 25px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.light .otpless-login-container {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.otpless-login-container h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.otpless-login-container p {
+  margin-bottom: 20px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.light .otpless-login-container p {
+  color: #666;
+}
+
+.otpless-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.otpless-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 15px;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+
+.otpless-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.whatsapp-button {
+  background-color: #25d366;
+  color: white;
+}
+
+.whatsapp-button:hover:not(:disabled) {
+  background-color: #1da851;
+}
+
+.otpless-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.otpless-divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.otpless-divider::before,
+.otpless-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #444;
+}
+
+.light .otpless-divider::before,
+.light .otpless-divider::after {
+  border-bottom: 1px solid #ddd;
+}
+
+.otpless-divider span {
+  padding: 0 10px;
+  color: #888;
+  font-size: 0.8rem;
+}
+
+.light .otpless-divider span {
+  color: #666;
+}
+
+.otpless-error {
+  background-color: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.light .otpless-error {
+  background-color: rgba(231, 76, 60, 0.1);
+  color: #c0392b;
+}

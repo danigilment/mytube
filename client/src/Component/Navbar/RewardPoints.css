@@ -1,0 +1,37 @@
+.reward-points-container {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  cursor: pointer;
+  position: relative;
+}
+
+.reward-points-icon {
+  color: gold;
+  margin-right: 5px;
+}
+
+.reward-points-value {
+  color: rgb(216, 149, 209);
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.reward-points-tooltip {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #333;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  width: 200px;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reward-points-container:hover .reward-points-tooltip {
+  display: block;
+}
