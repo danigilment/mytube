@@ -20,3 +20,17 @@
   max-height: 80vh;
   overflow-y: auto;
 }
+
+@media (max-width: 768px) {
+  .container_libraryPage {
+    padding: 0.5rem;
+  }
+
+  .title_container_LibraryPage {
+    margin: 0.5rem 1rem;
+  }
+
+  .container_videoList_LibraryPage {
+    max-height: 60vh;
+  }
+}

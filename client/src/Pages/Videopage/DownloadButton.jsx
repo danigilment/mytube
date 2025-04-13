@@ -47,7 +47,7 @@ const DownloadButton = ({ video, userId }) => {
           ).then(() => {
             // Create a direct download link with the video URL
             const encodedFilePath = encodeURIComponent(video.filepath)
-            const downloadUrl = `http://localhost:5000/video/download/${encodedFilePath}`
+            const downloadUrl = `https://mytube-2sa6.onrender.com/video/download/${encodedFilePath}`
 
             // Create a download link and trigger it
             const downloadLink = document.createElement("a")
@@ -120,7 +120,6 @@ const DownloadButton = ({ video, userId }) => {
             className={`quality-option ${!isPremium ? "premium-only" : ""}`}
             onClick={() => (isPremium ? handleDownload("hd") : null)}
           >
-          
             {!isPremium && <span className="premium-badge">Premium</span>}
           </div>
           {!isPremium && (

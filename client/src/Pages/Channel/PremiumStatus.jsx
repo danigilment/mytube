@@ -75,7 +75,6 @@ const PremiumStatus = ({ userId }) => {
                 <h3>Your Premium Benefits</h3>
                 <ul>
                   <li>✓ Unlimited video downloads</li>
-                  
                 </ul>
               </div>
             </>
@@ -96,7 +95,6 @@ const PremiumStatus = ({ userId }) => {
                 <h3>Premium Benefits</h3>
                 <ul>
                   <li>✓ Unlimited video downloads</li>
-                  
                 </ul>
               </div>
               <button className="premium-upgrade-btn" onClick={() => setShowUpgradeModal(true)}>

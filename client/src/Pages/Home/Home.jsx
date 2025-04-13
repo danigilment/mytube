@@ -16,7 +16,7 @@ const Home = () => {
   const navlist = ["All", "Python", "Java", "C++", "Movies", "Science", "Animation", "Gaming", "Comedy"]
 
   return (
-    <div className="container_Pages_App">
+    <div className="container_Pages_App" style={{ display: "flex", flexDirection: "row" }}>
       <Leftsidebar />
       <div className="container2_Pages_App">
         <div className="navigation_Home">

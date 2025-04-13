@@ -47,3 +47,31 @@
   border: 2px solid;
   color: rgb(231, 140, 14);
 }
+
+@media (max-width: 768px) {
+  .container3_chanel {
+    padding: 0.25rem;
+  }
+
+  .chanel_logo_chanel {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .description_chanel b {
+    font-size: 2rem;
+  }
+
+  .uploadbtn_chanel,
+  .editbtn_chanel {
+    position: relative;
+    right: auto;
+    top: auto;
+    margin: 0.5rem auto;
+    display: inline-block;
+  }
+
+  .uploadbtn_chanel {
+    margin-top: 0;
+  }
+}

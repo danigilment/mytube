@@ -134,7 +134,6 @@ const DownloadHistory = ({ userId }) => {
                 <button className="download-action-btn play-btn">
                   <i className="play-icon">▶</i> Play
                 </button>
-                
               </div>
             </div>
           </div>

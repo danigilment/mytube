@@ -23,7 +23,7 @@ const OTPVerification = ({ onVerificationComplete, userEmail, userState }) => {
     if (userState) {
       const method = getOTPMethodBasedOnLocation(userState)
       setOtpMethod(method)
-      console.log(`User state: ${userState}, using ${method} verification`)
+      // console.log(`User state: ${userState}, using ${method} verification`)
 
       // Auto-fill email if available and method is email
       if (method === "email" && userEmail) {
@@ -277,19 +277,12 @@ const OTPVerification = ({ onVerificationComplete, userEmail, userState }) => {
 
         {step === 1 ? (
           <div className="step-container">
-            <div className="verification-toggle">
-              <button
-                className={`toggle-btn ${otpMethod === "email" ? "active" : ""}`}
-                onClick={() => setOtpMethod("email")}
-              >
-                Email
-              </button>
-              <button
-                className={`toggle-btn ${otpMethod === "mobile" ? "active" : ""}`}
-                onClick={() => setOtpMethod("mobile")}
-              >
-                Mobile
-              </button>
+            <div className="verification-method-info">
+              {otpMethod === "email" ? (
+                <p>Based on your location (Southern India), we'll verify your account using your email address.</p>
+              ) : (
+                <p>Based on your location, we'll verify your account using your mobile number.</p>
+              )}
             </div>
 
             <label>
@@ -365,12 +358,6 @@ const OTPVerification = ({ onVerificationComplete, userEmail, userState }) => {
           <p>For security reasons, the OTP will expire in 15 minutes.</p>
           {otpMethod === "email" && <p>Please check both your inbox and spam folder for the OTP email.</p>}
           {otpMethod === "mobile" && <p>Standard SMS rates may apply.</p>}
-
-          {step === 1 && (
-            <button onClick={toggleVerificationMethod} className="switch-method-btn">
-              {otpMethod === "email" ? "Use mobile number instead" : "Use email instead"}
-            </button>
-          )}
         </div>
       </div>
     </div>

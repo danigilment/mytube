@@ -57,3 +57,39 @@
 .light .dot {
   background-color: #666;
 }
+
+@media (max-width: 768px) {
+  .video_ShowVideo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video_description {
+    height: auto;
+    min-height: 4rem;
+  }
+
+  .title_vid_ShowVideo {
+    font-size: medium;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .vid_views_UploadTime {
+    font-size: small;
+  }
+}
+
+@media (max-width: 670px) {
+  .video_description {
+    min-height: 3.5rem;
+  }
+
+  .Chanel_logo_App {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}

@@ -319,6 +319,15 @@
   .download-history-header {
     flex-direction: column;
     align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .download-stats {
+    flex-direction: column;
+  }
+
+  .stat-box {
+    margin-bottom: 0.5rem;
   }
 
   .download-history-item {
@@ -328,5 +337,10 @@
   .download-history-thumbnail {
     width: 100%;
     height: 180px;
+  }
+
+  .download-actions {
+    justify-content: center;
+    margin-top: 0.5rem;
   }
 }

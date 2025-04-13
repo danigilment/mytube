@@ -17,6 +17,7 @@ import { getalllikedvideo } from "./action/likedvideo"
 import { getallwatchlater } from "./action/watchlater"
 import { getRewardPoints } from "./action/rewardpoints"
 import { ThemeProvider } from "./context/ThemeContext"
+// import MobileBottomNav from "./Component/MobileBottomNav/MobileBottomNav"
 
 function App() {
   const [toggledrawersidebar, settogledrawersidebar] = useState({

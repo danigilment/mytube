@@ -18,7 +18,7 @@ const Channel = ({ seteditcreatechanelbtn, setvideouploadpage }) => {
   const [activeTab, setActiveTab] = useState("videos")
 
   return (
-    <div className="container_Pages_App">
+    <div className="container_Pages_App" style={{ display: "flex", flexDirection: "row" }}>
       <Leftsidebar />
       <div className="container2_Pages_App">
         <Describechannel
@@ -26,7 +26,7 @@ const Channel = ({ seteditcreatechanelbtn, setvideouploadpage }) => {
           setvideouploadpage={setvideouploadpage}
           seteditcreatechanelbtn={seteditcreatechanelbtn}
         />
-           <h2 className="dd">Reward points {currentuser && <RewardPoints />}</h2>
+        <h2 className="dd">Reward points {currentuser && <RewardPoints />}</h2>
         <div className="channel-tabs">
           <button
             className={`channel-tab ${activeTab === "videos" ? "active" : ""}`}
@@ -51,8 +51,6 @@ const Channel = ({ seteditcreatechanelbtn, setvideouploadpage }) => {
         {activeTab === "videos" && <Showvideogrid vid={vids} />}
         {activeTab === "downloads" && <DownloadHistory userId={currentuser?.result?._id} />}
         {activeTab === "premium" && <PremiumStatus userId={currentuser?.result?._id} />}
-
-        
       </div>
     </div>
   )

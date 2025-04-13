@@ -52,3 +52,17 @@
   padding: 2rem 0;
   margin: auto;
 }
+
+/* Add these responsive styles to the existing CSS */
+
+@media (max-width: 768px) {
+  .container2_VidUpload {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .ibtn_x {
+    right: 20px;
+    font-size: 3rem;
+  }
+}

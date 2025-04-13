@@ -38,3 +38,43 @@
 .whl_list {
   overflow-y: auto;
 }
+
+@media (max-width: 768px) {
+  .conatiner_whl {
+    flex-direction: row; /* Keep horizontal layout */
+  }
+
+  .box_WHL {
+    width: 40%;
+    margin: 0.4rem;
+    padding: 0.4rem;
+  }
+
+  .box_WHL b {
+    font-size: 2rem;
+  }
+
+  .leftside_whl {
+    height: auto;
+    min-height: 30vh;
+  }
+
+  .rightSide_whl h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 670px) {
+  .conatiner_whl {
+    flex-direction: column; /* Switch to vertical on very small screens */
+  }
+
+  .box_WHL {
+    width: 90%;
+    margin: 0.4rem auto;
+  }
+
+  .leftside_whl {
+    min-height: auto;
+  }
+}

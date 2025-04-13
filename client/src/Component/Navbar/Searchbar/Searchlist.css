@@ -5,12 +5,25 @@
   top: 2.7rem;
   height: fit-content;
   z-index: 91;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 4px 4px;
 }
+
 .titleItem {
   margin: 0;
   padding: 0.5rem;
   cursor: pointer;
 }
+
 .titleItem:hover {
   background-color: rgba(166, 202, 234, 0.516);
+}
+
+@media (max-width: 768px) {
+  .Container_SearchList {
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+  }
 }

@@ -102,3 +102,54 @@ video {
 .light .auth-guard-message {
   color: #333;
 }
+
+/* Improved responsive styles */
+@media (max-width: 1024px) {
+  .container2_Pages_App {
+    width: calc(100vw - 5rem);
+  }
+
+  .video_box_app {
+    width: 18rem;
+    height: 15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container_Pages_App {
+    flex-direction: row !important; /* Force horizontal layout */
+    display: flex !important;
+  }
+
+  .container2_Pages_App {
+    width: calc(100vw - 5rem);
+    height: calc(100vh - 3.65rem); /* Remove the adjustment for bottom nav */
+  }
+
+  .video_box_app {
+    width: 100%;
+    max-width: 21rem;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto 1rem;
+  }
+}
+
+@media (max-width: 670px) {
+  .container_Pages_App {
+    flex-direction: row !important; /* Force horizontal layout */
+    display: flex !important;
+    overflow: hidden;
+  }
+
+  .container_leftSidebar {
+    width: 3.5rem; /* Make sidebar narrower on very small screens */
+    min-width: 3.5rem; /* Prevent shrinking */
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+
+  .container2_Pages_App {
+    width: calc(100vw - 3.5rem);
+    flex-grow: 1;
+  }
+}

@@ -127,3 +127,86 @@
   display: flex;
   align-items: center;
 }
+
+@media (max-width: 1200px) {
+  .container2_videoPage {
+    margin: 1rem 2rem;
+    flex-direction: column;
+  }
+
+  .video_display_screen_videoPage {
+    width: 100%;
+    padding: 0;
+  }
+
+  .video_ShowVideo_videoPage {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .moreVideoBar {
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .views_date_btns_VideoPage {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .views_videoPage {
+    margin-bottom: 1rem;
+  }
+
+  .video-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container2_videoPage {
+    margin: 0.5rem;
+  }
+
+  .video_title_VideoPage {
+    font-size: large;
+    padding: 0.5rem;
+  }
+
+  .btns_cont_videoPage {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn_VideoPage {
+    margin: 0.5rem 0;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 670px) {
+  .container2_videoPage {
+    margin: 0.25rem;
+  }
+
+  .video_title_VideoPage {
+    font-size: medium;
+  }
+
+  .chanel_logo_videoPage {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .chanel_name_videoPage {
+    font-size: medium;
+  }
+
+  .video-actions {
+    justify-content: center;
+  }
+}

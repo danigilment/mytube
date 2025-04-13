@@ -72,14 +72,24 @@ const Videopage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vid, vv]) // Removed currentuser from dependencies to prevent double execution
 
-  if (!vv) return <div className="container_videoPage">Loading...</div>
+  if (!vv)
+    return (
+      <div className="container_videoPage" style={{ display: "flex", flexDirection: "row" }}>
+        Loading...
+      </div>
+    )
 
   return (
     <>
       <div className="container_videoPage">
         <div className="container2_videoPage">
           <div className="video_display_screen_videoPage">
-            <video src={`http://localhost:5000/${vv?.filepath}`} className="video_ShowVideo_videoPage" controls></video>
+            <video
+              src={`https://mytube-2sa6.onrender.com/${vv?.filepath}`}
+              className="video_ShowVideo_videoPage"
+              controls
+              playsInline // Add playsInline for better mobile experience
+            ></video>
             <div className="video_details_videoPage">
               <div className="video_btns_title_VideoPage_cont">
                 <p className="video_title_VideoPage">{vv?.title}</p>

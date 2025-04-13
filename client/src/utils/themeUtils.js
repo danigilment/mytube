@@ -12,7 +12,12 @@ export const southIndianStates = ["Tamil Nadu", "Kerala", "Karnataka", "Andhra P
 // Function to check if location is in South India
 export const isLocationSouthIndia = (state) => {
   if (!state) return false
-  return southIndianStates.some((s) => state.toLowerCase().includes(s.toLowerCase()))
+
+  // Create a more precise check for South Indian states
+  const southIndianStates = ["Tamil Nadu", "Kerala", "Karnataka", "Andhra Pradesh", "Telangana"]
+
+  // Check if the state exactly matches any of the South Indian states
+  return southIndianStates.some((southState) => state.toLowerCase().includes(southState.toLowerCase()))
 }
 
 // Function to determine theme based on time and location

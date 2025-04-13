@@ -222,6 +222,21 @@
   color: #2a90e6;
 }
 
+/* Add styling for the verification method info */
+.verification-method-info {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.light .verification-method-info {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #666;
+}
+
 /* Light theme support */
 .light .otp-verification {
   background-color: #f5f5f5;
@@ -310,4 +325,27 @@
 
 .light .switch-method-btn:hover {
   color: #1a5a9a;
+}
+
+/* Add these responsive styles to the existing CSS */
+
+@media (max-width: 768px) {
+  .otp-verification {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .otp-verification h2 {
+    font-size: 1.2rem;
+  }
+
+  .otp-input-container {
+    gap: 5px;
+  }
+
+  .otp-digit-input {
+    width: 35px !important;
+    height: 45px;
+    font-size: 20px !important;
+  }
 }

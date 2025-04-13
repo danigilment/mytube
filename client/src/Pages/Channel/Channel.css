@@ -49,3 +49,16 @@
 .light .channel-tab:hover {
   color: #2a7bbb;
 }
+
+@media (max-width: 768px) {
+  .channel-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 0.5rem;
+  }
+
+  .channel-tab {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

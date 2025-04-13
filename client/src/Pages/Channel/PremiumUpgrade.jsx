@@ -132,7 +132,7 @@ const PremiumUpgrade = ({ onClose, userId }) => {
           </p>
           <ul>
             <li>✓ Unlimited downloads forever</li>
-           
+
             <li>✓ No ads</li>
           </ul>
         </div>

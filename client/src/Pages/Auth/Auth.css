@@ -82,3 +82,16 @@
   cursor: pointer;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .Auth_container2 {
+    right: 0.5rem;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .email_auth {
+    font-size: medium;
+    word-break: break-all;
+  }
+}

@@ -67,3 +67,33 @@
 .EditDel_DisplayCommendt i {
   padding: 0.2rem;
 }
+
+@media (max-width: 768px) {
+  .comments_sub_form_comments {
+    width: 100%;
+    flex-direction: row; /* Keep horizontal layout */
+  }
+
+  .comment_ibox {
+    width: 75%;
+  }
+
+  .comment_add_btn_comments {
+    width: 25%;
+  }
+}
+
+@media (max-width: 670px) {
+  .comments_sub_form_comments {
+    flex-direction: column; /* Switch to vertical on very small screens */
+  }
+
+  .comment_ibox {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .comment_add_btn_comments {
+    width: 100%;
+  }
+}

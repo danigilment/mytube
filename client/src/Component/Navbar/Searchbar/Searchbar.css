@@ -4,15 +4,24 @@
   display: flex;
   height: 2rem;
 }
+
+.SearchBar_Container.mobile {
+  width: 100%;
+}
+
 .SearchBar_Container2 {
   margin: auto;
+  width: 100%;
 }
+
 .search_div {
   display: flex;
   margin: auto;
   position: relative;
   z-index: 91;
+  width: 100%;
 }
+
 .iBox_SearchBar {
   background-color: rgb(18, 18, 18);
   width: 30rem;
@@ -67,4 +76,44 @@
 .Mic_SearchBar {
   color: whitesmoke;
   margin: auto 0.7rem;
+}
+
+/* Improve the search bar responsiveness */
+@media (max-width: 768px) {
+  .SearchBar_Container2 {
+    width: 100%;
+  }
+
+  .search_div {
+    width: 100%;
+  }
+
+  .iBox_SearchBar {
+    width: calc(100% - 3rem);
+    font-size: 16px; /* Prevent zoom on focus in iOS */
+    border-radius: 4px;
+  }
+
+  .Container_SearchList {
+    width: calc(100% - 3rem);
+    max-height: 50vh;
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1001;
+  }
+
+  .searchIcon_SearchBar {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Mic_SearchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

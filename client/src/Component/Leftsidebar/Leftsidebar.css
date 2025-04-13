@@ -4,6 +4,11 @@
   height: calc(100vh - 3.55rem);
   box-sizing: border-box;
   overflow-y: auto;
+  position: sticky;
+  top: 3.55rem;
+  left: 0;
+  z-index: 10;
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 .light .container_leftSidebar {
@@ -46,13 +51,15 @@
 
 /** drawer sidebar*/
 .container_DrawaerLeftSidebar {
-  position: absolute;
+  position: fixed;
   display: flex;
   width: 100vw;
   z-index: 500;
+  height: calc(100vh - 3.6rem);
+  top: 3.6rem;
 }
 .container2_DrawaerLeftSidebar {
-  height: calc(100vh - 3.6rem);
+  height: 100%;
   overflow-y: auto;
   background-color: rgb(28, 28, 28);
   width: 15rem;
@@ -125,4 +132,35 @@
 
 .light .container3_DrawaerLeftSidebar {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Fix sidebar responsiveness */
+@media (max-width: 768px) {
+  .container_leftSidebar {
+    width: 4.7rem; /* Keep sidebar visible on mobile */
+    display: block !important;
+    min-width: 4.7rem; /* Prevent shrinking */
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+
+  .container_DrawaerLeftSidebar {
+    z-index: 1000;
+  }
+
+  .container2_DrawaerLeftSidebar {
+    width: 80%;
+    max-width: 15rem;
+  }
+}
+
+@media (max-width: 670px) {
+  .container_leftSidebar {
+    width: 3.5rem; /* Make sidebar narrower on very small screens */
+    min-width: 3.5rem; /* Prevent shrinking */
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+
+  .text_sidebar_icon {
+    font-size: 0.7rem;
+  }
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useContext } from "react"
+import { useState, useEffect, useContext, useRef } from "react"
 import logo from "./logo.ico"
 import "./Navbar.css"
 import { useDispatch, useSelector } from "react-redux"
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 import { RiVideoAddLine } from "react-icons/ri"
 import { IoMdNotificationsOutline } from "react-icons/io"
 import { BiUserCircle } from "react-icons/bi"
+import { FaSearch } from "react-icons/fa"
 import Searchbar from "./Searchbar/Searchbar"
 import Auth from "../../Pages/Auth/Auth"
 import axios from "axios"
@@ -26,12 +27,47 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
   const [profile, setprofile] = useState([])
   const [showOTPVerification, setShowOTPVerification] = useState(false)
   const [isOTPVerified, setIsOTPVerified] = useState(false)
+  const [showMobileSearch, setShowMobileSearch] = useState(false)
   const { theme, userState } = useContext(ThemeContext)
+  const searchBarRef = useRef(null)
 
   // Apply theme to body element
   useEffect(() => {
     document.body.className = theme
   }, [theme])
+
+  // Toggle mobile search
+  const toggleMobileSearch = () => {
+    setShowMobileSearch(!showMobileSearch)
+
+    // Focus the search input when opening
+    if (!showMobileSearch) {
+      setTimeout(() => {
+        const searchInput = document.querySelector(".mobile-search-container .iBox_SearchBar")
+        if (searchInput) searchInput.focus()
+      }, 100)
+    }
+  }
+
+  // Close mobile search when clicking outside
+  const handleClickOutside = (event) => {
+    if (
+      showMobileSearch &&
+      searchBarRef.current &&
+      !searchBarRef.current.contains(event.target) &&
+      !event.target.classList.contains("search_toggle_btn")
+    ) {
+      setShowMobileSearch(false)
+    }
+  }
+
+  // Add event listener for clicks outside
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [showMobileSearch])
 
   const dispatch = useDispatch()
 
@@ -121,18 +157,28 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
             <p className="logo_title_navbar">Your-Tube</p>
           </Link>
         </div>
-        <Searchbar />
+
+        {/* Desktop Search Bar */}
+        <div className="desktop-search">
+          <Searchbar />
+        </div>
+
+        {/* Search toggle button for mobile */}
+        <button className="search_toggle_btn" onClick={toggleMobileSearch}>
+          <FaSearch />
+        </button>
+
         <RiVideoAddLine size={22} className={"vid_bell_Navbar"} />
         <div className="apps_Box">
-          <p className="appBox"></p>
-          <p className="appBox"></p>
-          <p className="appBox"></p>
-          <p className="appBox"></p>
-          <p className="appBox"></p>
-          <p className="appBox"></p>
-          <p className="appBox"></p>
-          <p className="appBox"></p>
-          <p className="appBox"></p>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
+          <div className="appBox"></div>
         </div>
 
         <IoMdNotificationsOutline size={22} className={"vid_bell_Navbar"} />
@@ -162,6 +208,17 @@ const Navbar = ({ toggledrawer, seteditcreatechanelbtn }) => {
           )}
         </div>
       </div>
+
+      {/* Mobile Search Overlay */}
+      <div
+        className={`mobile-search-overlay ${showMobileSearch ? "active" : ""}`}
+        onClick={() => setShowMobileSearch(false)}
+      >
+        <div className="mobile-search-container" ref={searchBarRef} onClick={(e) => e.stopPropagation()}>
+          <Searchbar isMobile={true} />
+        </div>
+      </div>
+
       {authbtn && <Auth seteditcreatechanelbtn={seteditcreatechanelbtn} setauthbtn={setauthbtn} user={currentuser} />}
 
       {/* OTP Verification Modal */}

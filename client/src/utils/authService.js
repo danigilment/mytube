@@ -5,7 +5,7 @@ import * as api from "../Api"
 export const getOTPMethodBasedOnLocation = (state) => {
   // Check if the state is in South India
   if (isLocationSouthIndia(state)) {
-    return "email" // Use email OTP for South Indian states
+    return "email" // Use email OTP for South Indian states ONLY
   } else {
     return "mobile" // Use mobile OTP for other states
   }
@@ -48,11 +48,11 @@ export const sendOTP = async (contactInfo, method) => {
 // Function to verify OTP
 export const verifyOTP = async (contactInfo, enteredOTP, method) => {
   try {
-    console.log("Sending verification request:", { contact: contactInfo, otp: enteredOTP, method })
+    // console.log("Sending verification request:", { contact: contactInfo, otp: enteredOTP, method })
 
     const response = await api.verifyOTP(contactInfo, enteredOTP, method)
 
-    console.log("Verification API response:", response)
+    // console.log("Verification API response:", response)
 
     // If the response has data property, return it
     if (response.data) {

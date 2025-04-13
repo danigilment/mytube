@@ -8,16 +8,17 @@ import Searchlist from "./Searchlist"
 
 import { Link } from "react-router-dom"
 import { useSelector } from "react-redux"
-const Searchbar = () => {
+
+const Searchbar = ({ isMobile = false }) => {
   const [Searchquery, setsearchquery] = useState("")
   const [searchlist, setsearchlist] = useState(false)
   const Titlearray = useSelector((s) => s?.videoreducer)
     ?.data?.filter((q) => q?.videotitle.toUpperCase().includes(Searchquery?.toUpperCase()))
     .map((m) => m?.videotitle)
-  // const Titlearray = ["video1", "video2", "animation video", "Movies"].filter(q => q.toUpperCase().includes(Searchquery.toUpperCase()))
+
   return (
     <>
-      <div className="SearchBar_Container">
+      <div className={`SearchBar_Container ${isMobile ? "mobile" : ""}`}>
         <div className="SearchBar_Container2">
           <div className="search_div">
             <input

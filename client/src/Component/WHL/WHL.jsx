@@ -18,7 +18,7 @@ const WHL = ({ page, videolist }) => {
     }
   }
   return (
-    <div className="container_Pages_App">
+    <div className="container_Pages_App" style={{ display: "flex", flexDirection: "row" }}>
       <Leftsidebar />
       <div className="container2_Pages_App">
         <p className="conatiner_whl">
